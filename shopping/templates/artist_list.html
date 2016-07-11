@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %} Artist List {% endblock %}
+{% block script %} 
+<link rel="stylesheet" href="{% static 'css/main.css' %}"></script>
+<script src="{% static 'js/apps.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container" ng-app="app">
+  <div ng-controller="artistListController">
+    <div class="row" ng-repeat="artist in artists">
+      <div class="col-sm-12 col-xs-12">
+        {% verbatim %}   
+        <a href="../artist/?id={{artist.id}}">
+        <h4 class="card-title" ng-bind="artist.nickname"></h4>
+        <img class="card-img" ng-src="{{artist.img_url}}">
+        {% endverbatim %}
+        </a>
+        <p><span ng-bind="artist.description"></span></p>
+      </div> 
+    </div>
+  </div>
+
+<br>
+  <div class="loadMoreDiv" >
+    <button id="loadMoreButton" type="button" class="btn btn-default">Load More</button>
+  </div>
+</div>
+{% endblock %}
