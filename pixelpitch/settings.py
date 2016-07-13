@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'pixelpitch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	'NAME': 'pixelpitchdb',
+	'USER': 'pixelpitchdb_user',
+	'PASSWORD': 'QWER1234zxcv',
+	'HOST': 'localhost',
+	'PORT': '',
     }
 }
 
