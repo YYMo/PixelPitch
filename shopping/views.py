@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.core import serializers
@@ -9,7 +9,7 @@ import shopping.models as m
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Welcome to Domi's page")
+    return redirect('/artists')
 
 def artist_view(request):
     template = 'artist_profile.html'
