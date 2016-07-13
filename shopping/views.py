@@ -25,10 +25,11 @@ def artist_list_view(request):
 def item_view(request):
     template = 'item.html'
     id = request.GET['id']
-    context = {"id": id}
+    context = {
+        "id": id,
+        "item": m.Item.objects.get(id=id).jsObject(),
+    }
     return render(request, template, context)
-
-
 
 def get_artist_list(request):
     fake_artist_list = [
@@ -36,24 +37,17 @@ def get_artist_list(request):
             "name":"artist one",
             "description":" asdfas asdf asdf asdf adf ",
         },
-
         {
             "name":"artist two",
             "description": "sfasbaegndlvnoewi isafnkasjnawehegf sdnf asdf",
         },
-
     ]
 
     artists = m.Artist.objects.all()
     artists_list = []
-    for artist in  artists:
+    for artist in artists:
         print artist
-        artists_list.append({
-            "id": artist.id,
-            "nickname": artist.nick_name,
-            "description": artist.description,
-            "img_url": artist.avatar,
-            })
+        artists_list.append(artist.jsObject())
 
     data = {
         "artists": artists_list,
@@ -83,6 +77,7 @@ def get_artist_profile(request):
         "description": a.description,
         "img_url": a.avatar,
         "items": items,
+        "one_sentence_description": a.one_sentence_description,
 
     }
     return JsonResponse(artist)
@@ -90,15 +85,5 @@ def get_artist_profile(request):
 def get_item_info(request):
     id = request.GET['id']
     a = m.Item.objects.get(id=id)
-
-    item = {
-        "id": a.id,
-        "name": a.name,
-        "description": a.description,
-        "price": a.price,
-        "creator_name": a.creator.nick_name,
-        "creator_id": a.creator.id,
-        "img_url": a.avatar,
-
-    }
+    item = a.jsObject()
     return JsonResponse(item)

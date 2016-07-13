@@ -9,6 +9,7 @@ artist_app.controller("artistController", function($scope, $http){
       console.log(response);
       var artist = response;
       $scope.artist = artist;
+      addToContent(artist['description']);
 
     });
   }
@@ -19,3 +20,8 @@ artist_app.controller("artistController", function($scope, $http){
   }
 
 });
+
+function addToContent(html){
+  var d = document.getElementById("content");
+  d.innerHTML = html;
+}

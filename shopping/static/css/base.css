@@ -1,0 +1,16 @@
+.navbar-nav > li > a {
+	padding-top:5px !important; 
+	padding-bottom:5px !important;
+}
+
+.navbar {min-height:30px !important}
+
+
+
+/* Style of image in content */
+#content > p > img {
+	display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}

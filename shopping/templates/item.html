@@ -1,27 +1,38 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block script %}
-  <link rel="stylesheet" href="{% static 'css/main.css' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/itempage.css' %}"></script>
   <script src="{% static 'js/item.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 <div class="container" ng-app="item_app">  
-<div ng-controller="itemController" ng-init="init({{id}});loadItemInfo();">
-  <div class="row">
-    <div class="col-sm-12 col-xs-12">
-       {% verbatim %} 
-       <img class="card-img" ng-src="{{item.img_url}}">
-       {% endverbatim %}
-       <h4 class="card-title" ng-bind="item.name"></h4>  
-       <p><span ng-bind="item.description"></span></p>
-    </div>  
-  </div>  
-</div>
+  <div ng-controller="itemController" ng-init="init({{id}});loadItemInfo();">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+         {% verbatim %} 
+         <img class="card-img" ng-src="{{item.img_url}}">
+         <h4 class="card-title" ng-bind="item.name"></h4>  
+         <h5 class="card-title">价格: {{item.price}} </h5>
+         <div id="content"></div>
+         {% endverbatim %}
+         
+         <br>
+         <br>
+         <br>
 
-<br>
-<div class="buyButtonDiv" >
-<button id="buyButton" type="button" class="btn btn-default">下单</button>
+      </div>  
+    </div>  
+  </div>
 </div>
-</div>
+{% endblock %}
+
+{% block bottomfloater %}
+  <div id="fixed-footer">
+    <div class="btn-group btn-group-justified">
+      <a href="/artist?id={{item.creator_id}}" class="btn btn-primary">艺术家主页</a>
+      <a href="#" class="btn btn-info">下单</a>
+    </div>
+  </div>
+
 {% endblock %}

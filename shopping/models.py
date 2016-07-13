@@ -30,14 +30,24 @@ class Artist(models.Model):
 		choices=ARTIST_TYPE,
 		default='PHOTO')
 
-	description = models.TextField(max_length=1024, blank=True)
+	one_sentence_description = models.TextField(max_length=1024, blank=True)
+	description = models.TextField(max_length=40960, blank=True)
 
 	def __unicode__(self):
 		return "User: " + str(self.user) + ", Name: " + self.nick_name  
 
+	def jsObject(self):
+		return {
+            "id": self.id,
+            "nickname": self.nick_name,
+            "description": self.description,
+            "img_url": self.avatar,
+            "one_sentence_description": self.one_sentence_description,
+        }
+
 class Item(models.Model):
 	name = models.CharField(max_length=64)
-	description = models.TextField(max_length=1024)
+	description = models.TextField(max_length=40960)
 	creator = models.ForeignKey(
 		'Artist',
 		on_delete=models.CASCADE,
@@ -47,6 +57,17 @@ class Item(models.Model):
 
 	def __unicode__(self):
 		return "Name: " + self.name + ", Artist: " + self.creator.nick_name
+
+	def jsObject(self):
+		return {
+        	"id": self.id,
+        	"name": self.name,
+        	"description": self.description,
+        	"price": self.price,
+        	"creator_name": self.creator.nick_name,
+        	"creator_id": self.creator.id,
+        	"img_url": self.avatar,
+        }
 
 class Photo(models.Model):
 	name = models.CharField(max_length=64)

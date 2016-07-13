@@ -8,7 +8,7 @@ artist_app.controller("itemController", function($scope, $http){
       console.log(response);
       var item = response;
       $scope.item = item;
-
+      addToContent(item['description']);
     });
   }
 
@@ -18,3 +18,20 @@ artist_app.controller("itemController", function($scope, $http){
   }
 
 });
+
+function addToContent(html){
+  var d = document.getElementById("content");
+  d.innerHTML = html;
+}
+
+function htmlToElement(html) {
+  var template = document.createElement('template');
+  template.innerHTML = html;
+  return template.content.firstChild;
+}
+
+function htmlToElements(html) {
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content.childNodes;
+}

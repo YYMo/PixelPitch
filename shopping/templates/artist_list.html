@@ -18,14 +18,12 @@
         <img class="card-img" ng-src="{{artist.img_url}}">
         {% endverbatim %}
         </a>
-        <p><span ng-bind="artist.description"></span></p>
+        <p><span ng-bind="artist.one_sentence_description"></span></p>
       </div> 
     </div>
   </div>
 
 <br>
-  <div class="loadMoreDiv" >
-    <button id="loadMoreButton" type="button" class="btn btn-default">Load More</button>
-  </div>
+
 </div>
 {% endblock %}

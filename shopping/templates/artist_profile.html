@@ -17,15 +17,16 @@
          <img class="card-img" ng-src="{{artist.img_url}}">
          {% endverbatim %}
          <h4 class="card-title" ng-bind="artist.nickname"></h4>  
-         <p><span ng-bind="artist.description"></span></p>
+          <div class="toIntroDiv">
+            <button class="btn btn-default btn-sm">艺术家专访</button>
+          </div>  
+         <br>
+         <div id="content"></div>
       </div>  
     </div>
 
-    <div class="toIntroDiv">
-      <button class="btn btn-default btn-sm">艺术家专访</button>
-    </div>  
-    
     <br>
+    <h4>TA的作品</h4>
     
     <div ng-repeat="item in artist.items">
       <div class="row">
@@ -51,9 +52,6 @@
       </div>
     </div>
   </div>
-  <br>
-  <div class="loadMoreDiv" >
-    <button id="loadMoreButton" type="button" class="btn btn-default">Load More</button>
-  </div>
+
 </div>
 {% endblock %}
