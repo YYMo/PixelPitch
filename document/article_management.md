@@ -6,6 +6,7 @@ cloudinary.com
 ### 1.1 文件夹管理及命名
 - Artists/artist_name/
 - Items/item_name/
+
 ### 1.2 文件命名
 - 图片名_height_width.png
 - 编辑alt属性，添加关键字
