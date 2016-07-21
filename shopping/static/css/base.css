@@ -1,11 +1,17 @@
-.navbar-nav > li > a {
-	padding-top:5px !important; 
-	padding-bottom:5px !important;
+body {
+	background-color: #d9d9d9;
+	color: #333333;
 }
 
-.navbar {min-height:30px !important}
 
+.navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
 
+.pull-right .navbar-nav>li>a {
+    margin-right: 20px;
+}
 
 /* Style of image in content */
 #content > p > img {
@@ -14,3 +20,4 @@
     width: 100%;
     height: auto;
 }
+

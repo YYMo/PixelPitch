@@ -1,12 +1,13 @@
 .card-title {
-	text-align: center;
+	text-align: left;
+  margin-bottom: 5px;
 }
 
 .card-img {
 	/*text-align: center;*/
 	display: block;
-    margin: 0 auto;
-    width: 100%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .toIntroDiv{
@@ -22,5 +23,31 @@
   text-align: right;
   display: table-cell;
   vertical-align: middle;
+}
+
+.artist-card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+}
+
+.artist-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.artist-card .content {
+    padding: 2px 16px;
+}
+
+.image {
+  position: relative;
+}
+
+.image > img{
+  height: 240px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
 }
 

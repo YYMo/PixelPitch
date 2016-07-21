@@ -12,13 +12,27 @@
   <div ng-controller="artistListController">
     <div class="row" ng-repeat="artist in artists">
       <div class="col-sm-12 col-xs-12">
-        {% verbatim %}   
-        <a href="../artist/?id={{artist.id}}">
-        <h4 class="card-title" ng-bind="artist.nickname"></h4>
-        <img class="card-img" ng-src="{{artist.img_url}}">
-        {% endverbatim %}
-        </a>
-        <p><span ng-bind="artist.one_sentence_description"></span></p>
+        
+        <div class="artist-card">
+          {% verbatim %}   
+          <a href="../artist/?id={{artist.id}}">
+          <div class="image">
+            <img class="card-img" ng-src="{{artist.img_url}}">
+            
+          </div>
+          {% endverbatim %}
+          </a>
+
+          <div class="content">
+
+            <h4 class="card-title" ng-bind="artist.nickname"></h4>
+            <p><span ng-bind="artist.one_sentence_description"></span> fasf asdf asdf safasdfgasknbldb sdfgasdb sdfasb</p>
+            <p>查看TA的作品</p>
+       
+          </div>
+        
+        </div>
+
       </div> 
     </div>
   </div>
