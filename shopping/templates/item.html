@@ -8,12 +8,49 @@
 {% block content %}
 <div class="container" ng-app="item_app">  
   <div ng-controller="itemController" ng-init="init({{id}});loadItemInfo();">
+    
+    <div class="row artist-info-part">
+      <div class="col-xs-4">
+        <img ng-src="{{item.creator_avatar_url}}" class="img-circle img-avatar">
+      </div>
+
+      <div class="col-xs-8">
+        <p class="artist-name"> {{item.creator_name}} </p>
+        <p> {{item.creator_description}} </p>
+      </div>  
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4">
+        <img ng-src="{{item.img_url}}" class="img-preview">
+      </div>
+
+      <div class="col-xs-8">
+        <p>名称: {{item.creator_name}} <br>
+          尺寸: {{item.size}} <br>
+          年份: {{item.year}} </p>
+
+        <p class="price">价格: <span style="color: #f0525b;">{{item.price}} RMB </span></p>
+      </div>
+
+    </div>
+
+    <div class="row border-control">
+    </div> 
+
+
     <div class="row">
       <div class="col-sm-12 col-xs-12">
          {% verbatim %} 
+
+        
+      <!--
          <img class="card-img" ng-src="{{item.img_url}}">
          <h4 class="card-title" ng-bind="item.name"></h4>  
          <h5 class="card-title">价格: {{item.price}} </h5>
+
+       -->
+
          <div id="content"></div>
          {% endverbatim %}
          
@@ -22,7 +59,10 @@
          <br>
 
       </div>  
-    </div>  
+    </div>
+
+
+
   </div>
 </div>
 {% endblock %}
@@ -30,8 +70,8 @@
 {% block bottomfloater %}
   <div id="fixed-footer">
     <div class="btn-group btn-group-justified">
-      <a href="/artist?id={{item.creator_id}}" class="btn btn-primary">艺术家主页</a>
-      <a href="#" class="btn btn-info">下单</a>
+      <a href="/artist?id={{item.creator_id}}" class="btn btn-sharp btn-dark">艺术家更多作品</a>
+      <a href="#" class="btn btn-sharp btn-pink">购买</a>
     </div>
   </div>
 

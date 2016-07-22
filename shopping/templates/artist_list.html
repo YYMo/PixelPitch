@@ -13,21 +13,24 @@
     <div class="row" ng-repeat="artist in artists">
       <div class="col-sm-12 col-xs-12">
         
-        <div class="artist-card">
+        <div class="card">
           {% verbatim %}   
-          <a href="../artist/?id={{artist.id}}">
+          
           <div class="image">
             <img class="card-img" ng-src="{{artist.img_url}}">
             
           </div>
-          {% endverbatim %}
-          </a>
+          
+          
 
           <div class="content">
 
             <h4 class="card-title" ng-bind="artist.nickname"></h4>
             <p><span ng-bind="artist.one_sentence_description"></span> fasf asdf asdf safasdfgasknbldb sdfgasdb sdfasb</p>
-            <p>查看TA的作品</p>
+            <a href="../artist/?id={{artist.id}}#items">
+            <p>艺术家作品</p>
+            </a>
+          {% endverbatim %}
        
           </div>
         

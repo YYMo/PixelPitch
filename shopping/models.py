@@ -31,6 +31,7 @@ class Artist(models.Model):
 		default='PHOTO')
 
 	one_sentence_description = models.TextField(max_length=1024, blank=True)
+	description_title = models.CharField(max_length=256, blank=True, default="")
 	description = models.TextField(max_length=40960, blank=True)
 
 	def __unicode__(self):
@@ -54,6 +55,11 @@ class Item(models.Model):
 		)
 	price = models.DecimalField(max_digits=8, decimal_places=2)
 	avatar = models.URLField(max_length=256)
+	type = models.CharField(max_length=64, default="Paint")
+	year = models.IntegerField(default=2016)
+	size = models.CharField(max_length=64, default="1 X 1")
+
+
 
 	def __unicode__(self):
 		return "Name: " + self.name + ", Artist: " + self.creator.nick_name
@@ -66,7 +72,12 @@ class Item(models.Model):
         	"price": self.price,
         	"creator_name": self.creator.nick_name,
         	"creator_id": self.creator.id,
+        	"creator_description": self.creator.one_sentence_description,
+        	"creator_avatar_url": self.creator.avatar,
         	"img_url": self.avatar,
+        	"type": self.type,
+        	"year": self.year,
+        	"size": self.size,
         }
 
 class Photo(models.Model):

@@ -16,3 +16,83 @@
     text-align: center;
 }
 
+
+.img-avatar {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-preview {
+	width: 100px;
+	height: 150px;
+	display: block;
+  	margin: 0 auto;
+}
+
+.artist-name {
+	font-size: 18px;
+	margin-bottom: 2px;
+}
+
+.artist-info-part {
+	border-bottom: 1px solid #1a1a1a;
+  	padding-bottom: 15px;
+  	margin-bottom: 10px;
+}
+
+.border-control {
+	margin-left: 0px;
+	margin-right: 0px;
+	border-bottom: 1px solid #1a1a1a;
+  	padding-bottom: 15px;
+  	margin-bottom: 10px;
+}
+
+.price {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-sharp {
+	border-radius: 0;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-pink, .btn-pink:hover, .btn-pink:focus, .btn-pink:active, .btn-pink.active, .open > .dropdown-toggle.btn-pink {
+    background: #f0525b;
+    color: #ffffff;
+}
+ 
+.btn-pink:active, .btn-pink.active {
+    background: #cc0000;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.btn-dark, .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open > .dropdown-toggle.btn-dark {
+    background: #404040;
+    color: #ffffff;
+}
+ 
+.btn-dark:active, .btn-dark.active {
+    background: #000000;
+    color: #ffffff;
+    box-shadow: none;
+}

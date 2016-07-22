@@ -11,45 +11,65 @@
 {% block content %}
 <div class="container" ng-app="artist_app"> 
   <div ng-controller="artistController" ng-init="init({{id}});loadArtistInfo();">
-    <div class="row">
+    <div class="row" id="artist">
       <div class="col-sm-12 col-xs-12">
-         {% verbatim %} 
+         {% verbatim %}
+         <h4> {{artist.title}}</h4> 
+         <p>艺术家: {{artist.nickname}} <span style="float:right;">文章/拍摄 溪边艺术</span> </p>
          <img class="card-img" ng-src="{{artist.img_url}}">
          {% endverbatim %}
-         <h4 class="card-title" ng-bind="artist.nickname"></h4>  
-          <div class="toIntroDiv">
-            <button class="btn btn-default btn-sm">艺术家专访</button>
+         <div class="extendBar">
+         <div class="toIntroDiv">
+            <a class="btn btn-default btn-sm" href="#items">艺术家作品</a>
+          </div>
           </div>  
+
          <br>
-         <div id="content"></div>
+         <div id="content" ></div>
+         <div class="border-control"></div>
       </div>  
     </div>
 
-    <br>
-    <h4>TA的作品</h4>
+    
+    <div class="item-top" id="items" name="items">
+      <div style="float:left"><h4 id="item-part-title">艺术家作品</h4></div>
+      <div class="toIntroDiv">
+          <a class="btn btn-default btn-sm" href="#artist">艺术家介绍</a>
+      </div>
+    </div>
     
     <div ng-repeat="item in artist.items">
       <div class="row">
         {% verbatim %} 
         <div class="col-sm-12 col-xs-12">
-           <img class="card-img" ng-src="{{item.img_url}}">
-        </div>
-      </div>
-      
-      <br>
-      <div class="row buttonlist">
-        <div class="col-xs-7">
-          <p>{{item.name}}<br> 价格: {{item.price}}</p>
-        </div>  
+          <div class="card">
+            <div class="image">
+              <img class="card-img" ng-src="{{item.img_url}}">
+            </div>
+        
+        
+              <div class="buttonlist">
+                <div class="item-info">
+                  <p>作品名称: {{item.name}}
+                  <br>类型: {{item.type}}
+                  <br>价格: {{item.price}}</p>
+                </div>  
 
-        <div class="col-xs-2" >
-          <button class="btn btn-default btn-sm"> 下单 </button>
+                <div id="item-button" >
+                  <div class="btn-group btn-group-justified">
+                    <a class="btn btn-dark"/> 购买 </a>
+                    <a class="btn btn-pink" href="/item/?id={{item.id}}"/> 详细信息 </a>
+                  </div>
+
+                </div>
+           
+              {% endverbatim %}
+            </div>
+          </div>
         </div>
-        <div class="col-xs-3" >
-          <a class="btn btn-default btn-sm" href="/item/?id={{item.id}}"/> 详细信息 </a>
-        </div>
-        {% endverbatim %}
       </div>
+        
+
     </div>
   </div>
 

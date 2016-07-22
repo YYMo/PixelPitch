@@ -1,5 +1,5 @@
 body {
-	background-color: #d9d9d9;
+	background-color: #eaeaea;
 	color: #333333;
 }
 
@@ -21,3 +21,59 @@ body {
     height: auto;
 }
 
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar-default .navbar-brand {
+	color: #dbf2ed;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: #dbf2ed;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: #404040;
+}
+
+.navbar-toggle {
+    z-index: 3;
+}
+
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-default {
+	background-color: #404040 ;
+    border-color: #A1A1A1;
+}
+
+.navbar-default .navbar-nav > li > a {
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #f0525b;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+
+
+}

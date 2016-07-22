@@ -61,15 +61,7 @@ def get_artist_profile(request):
     
     items = []
     for it in its:
-        items.append({
-            "id": it.id,
-            "name": it.name,
-            "description": it.description,
-            "price": it.price,
-            "creator_name": it.creator.nick_name,
-            "creator_id": it.creator.id,
-            "img_url": it.avatar,
-        })
+        items.append(it.jsObject())
 
     artist = {
         "id": a.id,
@@ -78,6 +70,7 @@ def get_artist_profile(request):
         "img_url": a.avatar,
         "items": items,
         "one_sentence_description": a.one_sentence_description,
+        "title": a.description_title,
 
     }
     return JsonResponse(artist)
