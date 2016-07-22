@@ -26,8 +26,10 @@
       </div>
 
       <div class="col-xs-8">
-        <p>名称: {{item.creator_name}} <br>
+        <p>名称: {{item.name}} <br>
+          类型: {{item.type}} <br>
           尺寸: {{item.size}} <br>
+
           年份: {{item.year}} </p>
 
         <p class="price">价格: <span style="color: #f0525b;">{{item.price}} RMB </span></p>
@@ -71,7 +73,7 @@
   <div id="fixed-footer">
     <div class="btn-group btn-group-justified">
       <a href="/artist?id={{item.creator_id}}" class="btn btn-sharp btn-dark">艺术家更多作品</a>
-      <a href="#" class="btn btn-sharp btn-pink">购买</a>
+      <a href="{{item.buy_link}}" class="btn btn-sharp btn-pink">购买</a>
     </div>
   </div>
 

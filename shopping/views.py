@@ -43,7 +43,7 @@ def get_artist_list(request):
         },
     ]
 
-    artists = m.Artist.objects.all()
+    artists = m.Artist.objects.filter(active=True)
     artists_list = []
     for artist in artists:
         print artist

@@ -19,6 +19,7 @@ class Artist(models.Model):
 	last_name = models.CharField(max_length=64, blank=True)
 	nick_name = models.CharField(max_length=64)
 	birth_date = models.DateField(auto_now=False, blank=True)
+	active = models.BooleanField(default=False)
 
 	gender = models.CharField(
 		max_length=2,
@@ -58,8 +59,7 @@ class Item(models.Model):
 	type = models.CharField(max_length=64, default="Paint")
 	year = models.IntegerField(default=2016)
 	size = models.CharField(max_length=64, default="1 X 1")
-
-
+	buy_link = models.URLField(max_length=256, default="")
 
 	def __unicode__(self):
 		return "Name: " + self.name + ", Artist: " + self.creator.nick_name
@@ -78,6 +78,7 @@ class Item(models.Model):
         	"type": self.type,
         	"year": self.year,
         	"size": self.size,
+        	"buy_link": self.buy_link,
         }
 
 class Photo(models.Model):
