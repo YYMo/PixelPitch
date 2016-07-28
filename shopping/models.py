@@ -14,7 +14,7 @@ class Artist(models.Model):
         ('O', 'Other')
     )
     user = models.OneToOneField(User)
-    avatar = models.URLField(max_length=256)
+    avatar = models.CharField(max_length=256, default="")
     first_name = models.CharField(max_length=64, blank=True)
     last_name = models.CharField(max_length=64, blank=True)
     nick_name = models.CharField(max_length=64)
