@@ -1,1 +1,4 @@
 *.py[cod]
+
+#photos
+/pixelpitch/images/
