@@ -15,10 +15,12 @@ def recur(abs_path, width):
             recur(path, width)
         elif os.path.isfile(path):
             print f
+	    flag = True
             for w in WIDTH_LIST:
                 if ('_p' + str(width)) in f:
-                    return 
-            resize_width(width, path)
+                    flag = False
+	    if flag: 
+            	resize_width(width, path)
 
 def get_file_ext(file_name):
     ext = file_name.split(".")[-1]
