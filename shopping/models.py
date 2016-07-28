@@ -55,7 +55,7 @@ class Item(models.Model):
         on_delete=models.CASCADE,
         )
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    avatar = models.URLField(max_length=256)
+    avatar = models.CharField(max_length=256, default="")
     type = models.CharField(max_length=64, default="Paint")
     year = models.IntegerField(default=2016)
     size = models.CharField(max_length=64, default="1 X 1")
