@@ -31,8 +31,8 @@ def resize_width(width, file_name):
         return 
     fd_img = open(file_name, 'r')
     img = Image.open(fd_img)
-    width, height = img.size
-    if width <= width:
+    w, h = img.size
+    if w <= width:
         return
     img = resizeimage.resize_width(img, width)
     img.save(name + '_p' + str(width) + '.' + ext, img.format)
