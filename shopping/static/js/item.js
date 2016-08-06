@@ -19,6 +19,19 @@ artist_app.controller("itemController", function($scope, $http){
 
 });
 
+artist_app.controller("trackController", function($scope, $http){
+  $scope.click = function(){
+    console.log("clikkk");
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Videos',
+      eventAction: 'Click to Pay',
+      eventLabel: 'Fall Campaign'
+    });
+  }
+
+});
+
 function addToContent(html){
   var d = document.getElementById("content");
   d.innerHTML = html;

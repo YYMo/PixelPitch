@@ -62,19 +62,14 @@
 
       </div>  
     </div>
-
-
-
   </div>
-</div>
-{% endblock %}
 
-{% block bottomfloater %}
-  <div id="fixed-footer">
+
+  <div id="fixed-footer" ng-controller="trackController">
     <div class="btn-group btn-group-justified">
       <a href="/artist?id={{item.creator_id}}" class="btn btn-sharp btn-dark">艺术家更多作品</a>
-      <a href="{{item.buy_link}}" class="btn btn-sharp btn-pink">购买</a>
+      <a href="{{item.buy_link}}" class="btn btn-sharp btn-pink" ng-click="click()">购买</a>
     </div>
   </div>
-
+</div>
 {% endblock %}
