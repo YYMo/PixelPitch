@@ -6,7 +6,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="container" ng-app="item_app">  
+<div ng-app="item_app">
+<div class="container">  
   <div ng-controller="itemController" ng-init="init({{id}});loadItemInfo();">
     
     <div class="row artist-info-part">
@@ -63,12 +64,12 @@
       </div>  
     </div>
   </div>
-
+</div>
 
   <div id="fixed-footer" ng-controller="trackController">
     <div class="btn-group btn-group-justified">
-      <a href="/artist?id={{item.creator_id}}" class="btn btn-sharp btn-dark">艺术家更多作品</a>
-      <a href="{{item.buy_link}}" class="btn btn-sharp btn-pink" ng-click="click()">购买</a>
+      <a href="/artist?id={{item.creator_id}}" class="btn btn-sharp btn-dark" ng-click="trackEvent('click', 'more_from_button', 'artist')">艺术家更多作品</a>
+      <a href="{{item.buy_link}}" class="btn btn-sharp btn-pink" ng-click="trackEvent('click', 'buy_button', 'item')">购买</a>
     </div>
   </div>
 </div>

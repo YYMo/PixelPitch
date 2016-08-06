@@ -20,13 +20,13 @@ artist_app.controller("itemController", function($scope, $http){
 });
 
 artist_app.controller("trackController", function($scope, $http){
-  $scope.click = function(){
+  $scope.trackEvent = function(category, action, label){
     console.log("clikkk");
     ga('send', {
       hitType: 'event',
-      eventCategory: 'Videos',
-      eventAction: 'Click to Pay',
-      eventLabel: 'Fall Campaign'
+      eventCategory: category,
+      eventAction: action,
+      eventLabel: label,
     });
   }
 
